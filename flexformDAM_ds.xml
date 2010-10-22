@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<T3DataStructure>
+  <meta>
+    <langDisable>1</langDisable>
+  </meta>
+ <sheets type="array">
+  <sDEF type="array">
+   <ROOT type="array">
+    <TCEforms type="array">
+		<sheetTitle>HTML5Video</sheetTitle>
+	</TCEforms>
+		<type>array</type>
+				<el>	
+		<source>	
+			<type>array</type>
+					<el>
+			<poster>
+				<TCEforms>						
+					<label>Poster Image</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam</allowed>
+						<size>10</size>
+						<prepend_tname>1</prepend_tname>
+						<MM>tx_dam_mm_ref</MM>
+						<MM_foreign_select>1</MM_foreign_select>
+						<MM_opposite_field>1</MM_opposite_field>
+						<MM_match_fields>
+								<ident>html5videoposter</ident>
+						</MM_match_fields>
+						<disallowed_types>php,php3</disallowed_types>
+						<maxitems>1</maxitems>
+						<minitems>0</minitems>
+						<show_thumbs>1</show_thumbs>
+						<autoSizeMax>1</autoSizeMax>
+					</config>
+				</TCEforms>
+			</poster>
+			<ogg>
+				<TCEforms>						
+					<label>Ogg Source</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam</allowed>
+						<size>10</size>
+						<prepend_tname>1</prepend_tname>
+						<MM>tx_dam_mm_ref</MM>
+						<MM_foreign_select>1</MM_foreign_select>
+						<MM_opposite_field>1</MM_opposite_field>
+						<MM_match_fields>
+								<ident>html5videoogg</ident>
+						</MM_match_fields>
+						<disallowed_types>php,php3</disallowed_types>
+						<maxitems>1</maxitems>
+						<minitems>0</minitems>
+						<show_thumbs>1</show_thumbs>
+						<autoSizeMax>1</autoSizeMax>
+					</config>
+				</TCEforms>
+			</ogg>
+			<mp4>
+				<TCEforms>						
+					<label>MP4 Source</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam</allowed>
+						<size>10</size>
+						<prepend_tname>1</prepend_tname>
+						<MM>tx_dam_mm_ref</MM>
+						<MM_foreign_select>1</MM_foreign_select>
+						<MM_opposite_field>1</MM_opposite_field>
+						<MM_match_fields>
+								<ident>html5videomp4</ident>
+						</MM_match_fields>
+						<disallowed_types>php,php3</disallowed_types>
+						<maxitems>1</maxitems>
+						<minitems>0</minitems>
+						<show_thumbs>1</show_thumbs>
+						<autoSizeMax>1</autoSizeMax>
+					</config>
+				</TCEforms>
+			</mp4>
+			<webm>
+				<TCEforms>						
+					<label>WebM Source</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam</allowed>
+						<size>10</size>
+						<prepend_tname>1</prepend_tname>
+						<MM>tx_dam_mm_ref</MM>
+						<MM_foreign_select>1</MM_foreign_select>
+						<MM_opposite_field>1</MM_opposite_field>
+						<MM_match_fields>
+								<ident>html5videowebm</ident>
+						</MM_match_fields>
+						<disallowed_types>php,php3</disallowed_types>
+						<maxitems>1</maxitems>
+						<minitems>0</minitems>
+						<show_thumbs>1</show_thumbs>
+						<autoSizeMax>1</autoSizeMax>
+					</config>
+				</TCEforms>
+			</webm>			
+			<flv>
+				<TCEforms>						
+					<label>Flash Source</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam</allowed>
+						<size>10</size>
+						<prepend_tname>1</prepend_tname>
+						<MM>tx_dam_mm_ref</MM>
+						<MM_foreign_select>1</MM_foreign_select>
+						<MM_opposite_field>1</MM_opposite_field>
+						<MM_match_fields>
+								<ident>html5videoflv</ident>
+						</MM_match_fields>
+						<disallowed_types>php,php3</disallowed_types>
+						<maxitems>1</maxitems>
+						<minitems>0</minitems>
+						<show_thumbs>1</show_thumbs>
+						<autoSizeMax>1</autoSizeMax>
+					</config>
+				</TCEforms>
+			</flv>
+		</el>
+			</source>
+			<FlashMP4>
+                <TCEforms>
+						<label>Use MP4</label>
+						<config>
+							<type>check</type>
+						</config>
+				</TCEforms>
+			</FlashMP4>
+			<width>
+				<TCEforms>
+					<label>width</label>
+					<config>
+						<type>input</type>
+						<size>3</size>
+					</config>
+				</TCEforms>
+			</width>
+			<height>
+				<TCEforms>
+					<label>height</label>
+					<config>
+						<type>input</type>
+						<size>3</size>
+					</config>
+				</TCEforms>
+			</height>
+			<download>
+                <TCEforms>
+						<label>Download Links</label>
+						<config>
+							<type>check</type>
+						</config>
+				</TCEforms>
+			</download>
+			<SupportVideoJS>
+                <TCEforms>
+						<label>Support VideoJS</label>
+						<config>
+							<type>check</type>
+						</config>
+				</TCEforms>
+			</SupportVideoJS>
+			<PreloadVideo>
+                <TCEforms>
+						<label>Preload Video</label>
+						<config>
+							<type>check</type>
+						</config>
+				</TCEforms>
+			</PreloadVideo>
+			<AutoplayVideo>
+                <TCEforms>
+						<label>Autoplay Video</label>
+						<config>
+							<type>check</type>
+						</config>
+				</TCEforms>
+			</AutoplayVideo>
+						
+	    </el>
+	  </ROOT>
+    </sDEF>
+  </sheets>
+
+</T3DataStructure>

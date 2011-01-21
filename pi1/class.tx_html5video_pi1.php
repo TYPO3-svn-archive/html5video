@@ -247,9 +247,9 @@ class tx_html5video_pi1 extends tslib_pibase {
 	public function flex2conf(&$pObj) {
 		if (is_array($pObj->cObj->data['pi_flexform']['data'])) { // if there are flexform values
 			foreach ($pObj->cObj->data['pi_flexform']['data'] as $key => $value) { // every flexform category
-				if (count($pObj->cObj->data['pi_flexform']['data'][$key]['lDEF']) > 0) {
+				if (is_array($pObj->cObj->data['pi_flexform']['data'][$key]['lDEF'])) {
 					foreach ($pObj->cObj->data['pi_flexform']['data'][$key]['lDEF'] as $key2 => $value2) { // every flexform option
-						if (count($pObj->cObj->data['pi_flexform']['data'][$key]['lDEF'][$key2]) > 0) {
+						if (is_array($pObj->cObj->data['pi_flexform']['data'][$key]['lDEF'][$key2])) {
 							foreach($pObj->cObj->data['pi_flexform']['data'][$key]['lDEF'][$key2] as $key3 => $value3){
 								if( $key3==="el"){
 									foreach($pObj->cObj->data['pi_flexform']['data'][$key]['lDEF'][$key2][$key3] as $key4 => $value4){

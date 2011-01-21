@@ -37,7 +37,7 @@
 					<config>
 						<type>group</type>
 					 	<internal_type>file</internal_type>
-						<allowed>ogg</allowed>
+						<allowed>ogg,ogv</allowed>
 						<max_size>250000</max_size>
 						<uploadfolder>uploads/html5video</uploadfolder>
 						<disallowed_types>php,php3</disallowed_types>

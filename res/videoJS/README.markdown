@@ -1,6 +1,6 @@
 VideoJS - [HTML5 Video Player](http://videojs.com)
 ==================================================
-Version 1.1.3
+Version 2.0.2
 
 View [VideoJS.com](http://videojs.com) for a demo and overview.
 
@@ -14,7 +14,7 @@ Originally based on [this tutorial](http://blog.steveheffernan.com/2010/04/how-t
 
 Contributors (Github Username)
 ------------------------------
-heff, dz0ny, sentientbit, tvdeyen, brandonarbini, gordonbrander, Shraymonks, albertogasparin, sandaru1, nicholasbs, majornista, Fredust85
+heff, dz0ny, sentientbit, tvdeyen, brandonarbini, gordonbrander, Shraymonks, albertogasparin, sandaru1, nicholasbs, majornista, Fredust85, @wonderboymusic
 
 
 Getting Started
@@ -45,11 +45,11 @@ Change the video and image files to your own. You can even swap out the Flash Fa
     <div class="video-js-box">
       <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
       <video id="example_video_1" class="video-js" width="640" height="264" poster="http://video-js.zencoder.com/oceans-clip.png" controls preload>
-        <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-        <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"'>
-        <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"'>
+        <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
+        <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' />
         <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
-        <object class="vjs-flash-fallback" width="640" height="264" type="application/x-shockwave-flash"
+        <object id="flash_fallback_1" class="vjs-flash-fallback" width="640" height="264" type="application/x-shockwave-flash"
           data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
           <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
           <param name="allowfullscreen" value="true" />
@@ -113,9 +113,7 @@ Set options when setting up the videos. The defaults are shown here.
       controlsBelow: false, // Display control bar below video instead of in front of
       controlsHiding: true, // Hide controls when mouse is not over the video
       defaultVolume: 0.85, // Will be overridden by user's last volume if available
-      flashVersion: 9, // Required flash version for fallback
-      linksHiding: true, // Hide download links when video is supported
-      flashIsDominant: false // Always use Flash when available
+      flashPlayerVersion: 9, // Required flash version for fallback
     });
 
 ### Or as the second option of VideoJS.setup
@@ -127,9 +125,58 @@ Set options when setting up the videos. The defaults are shown here.
     });
 
 
+Coming Next
+-----------
+- API to Flash fallback
+
 Changelog
 ---------
-1.1.3
+2.0.2 (2010-12-10)
+
+- Feature: Rewrote and optimized subtitle code.
+- Feature: Protecting against volume ranges outside of 1 and 0.
+- Fix: Bug in Safari for Mac OS 10.5 (Leopard) that was breaking fullscreen.
+
+2.0.1 (2010-11-22)
+
+- Fix: Issue with big play button when multiple videos are on the page.
+- Fix: Optimized play progress tracking.
+- Fix: Optimized buffer progress checking.
+- Fix: Firefox not showing Flash fallback object.
+
+2.0.0 (2010-11-21)
+
+- Feature: Created "behaviors" concept for adding behaviors to elements
+- Feature: Switched back to divs for controls, for more portable styles
+- Feature: Created playerFallbackOrder array option. ["html5", "flash", "links"]
+- Feature: Created playerType concept, for initializing different platforms
+- Feature: Added play button for Android
+- Feature: Added spinner for iPad (non-fullscreen)
+- Feature: Split into multiple files for easier development
+- Feature: Combined VideoJS & _V_ into the same variable to reduce confusion
+- Fix: Checking for m3u8 files (Apple HTTP Streaming)
+- Fix: Catching error on localStorage full that safari seems to randomly throw
+- Fix: Scrubbing to end doesn't trigger onEnded
+
+1.1.5 (2010-11-09)
+
+- Feature: Switched to track method for setting subtitles. Now works like spec.
+- Feature: Created "players" concept for defining fallbacks and fallback order
+- Fix: Android playback bug.
+- Fix: Massive reorganization of code to make easier to navigate
+
+1.1.4 (2010-11-06)
+
+- Feature: Added loading spinner.
+- Feature: Improved styles loaded checking.
+- Feature: Added volume() function to get and set volume through the player.
+- Fix: Fix issue where FF would loop video in background when ended.
+- Fix: Bug in Chrome that shows poster & plays audio if you set currentTime too quickly.
+- Fix: Bug in Safari where waiting is triggered and shows spinner when not needed
+- Fix: Updated to show links if only unplayable sources and no Flash.
+- Fix: Issue where if play button was loaded after play, it wouldn't hide.
+
+1.1.3 (2010-10-19)
 
 - Feature: Width/Height functions for resizing the player
 - Feature: Made initial click & hold trigger new value on progress and volume

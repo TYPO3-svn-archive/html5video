@@ -211,7 +211,7 @@ class tx_html5video_pi1 extends tslib_pibase {
 	 * creat the patch for the videos dam and from upload folder
 	 */
 	public function getFileData(){
-		$row = $this->local_cObj->data;			
+		$row = $this->cObj->data;			
 		if (isset($row['_ORIG_uid']) && ($row['_ORIG_uid'] > 0)) {
 	      $uid = $row['_ORIG_uid'];
 		}else{
@@ -223,7 +223,8 @@ class tx_html5video_pi1 extends tslib_pibase {
 		
 		$tableofcontent='tt_content';
 		
-		foreach($this->conf['source.'] as $key => $value){			
+		foreach($this->conf['source.'] as $key => $value){
+
 			if(t3lib_extMgm::isLoaded('dam')){
 				$damArray[$key]= tx_dam_db::getReferencedFiles($tableofcontent,  $uid, 'html5video'.$key);
 				foreach ($damArray[$key]['files'] as $id => $files){

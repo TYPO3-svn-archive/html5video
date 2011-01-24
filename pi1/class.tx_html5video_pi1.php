@@ -64,9 +64,9 @@ class tx_html5video_pi1 extends tslib_pibase {
 		
 		
 		
-		$content = $this->cObj->stdWrap($this->getVideo().$this->getDownload().$support , $this->conf['video.']);
+		$content = $this->cObj->stdWrap($this->getVideo().$this->getDownload() , $this->conf['video.']);
 	
-		return $this->pi_wrapInBaseClass($content);
+		return $this->pi_wrapInBaseClass($content.$support);
 	}
 	
 	/**

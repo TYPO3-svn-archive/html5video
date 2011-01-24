@@ -113,7 +113,7 @@ class tx_html5video_pi1 extends tslib_pibase {
 		$flashplayer=empty($this->conf['flash.']['player'])?'http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf':$this->conf['flash.']['player'];
                 $this->conf['source.']['flv']= empty($this->conf['source.']['flv'])?$this->conf['source.']['mp4']:$this->conf['source.']['flv'];
 		$video= $this->conf['FlashMP4']?$this->conf['source.']['mp4']:$this->conf['source.']['flv'];
-
+                $video =$this->baseUrl.$video;
 		$autoplay=$this->conf['AutoplayVideo']?',"autoPlay":true':'","autoPlay":false';
 		$preload= $this->conf['PreloadVideo']?',"autoBuffering":true':',"autoBuffering":false';
 

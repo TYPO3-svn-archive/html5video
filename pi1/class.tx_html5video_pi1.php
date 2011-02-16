@@ -85,8 +85,8 @@ class tx_html5video_pi1 extends tslib_pibase {
 		    	//source file für Video
 		    	if($type != 'poster'and $type != 'flv'){
 			    	$sourc['src']= 'src="'.$file.'"';
-			    	$sourctype='type="'.$this->conf['type.'][$type].'"';			
-			    	$source.='<source '.$sourc['src'].$sourctype.'>';
+			    	$sourctype='type=\''.$this->conf['type.'][$type].'\'';			
+			    	$source.='<source '.$sourc['src'].$sourctype.' />';
 		    	}
 		    	//download für die Filme bei error
 		    	if($type != 'poster'){
@@ -143,7 +143,7 @@ class tx_html5video_pi1 extends tslib_pibase {
 			$this->poster['alt']= empty($this->conf['poster.']['alt'])?'':' alt="'.$this->conf['poster.']['alt'].'"';
 			$this->poster['title']= empty($this->conf['poster.']['titel'])?'':' title="'.$this->conf['poster.']['titel'].'"';
 		    $this->poster['video']= ' poster="'.$this->conf['source.']['poster'].'"';
-		    $this->poster['flash']= '<img src="'.$this->conf['source.']['poster'].'" '.'width="'.$this->conf['width'].'" height="'.$this->conf['height'].$posterAlt.' />'; //TS Images
+		    $this->poster['flash']= '<img src="'.$this->conf['source.']['poster'].'" '.'width="'.$this->conf['width'].'" height="'.$this->conf['height'].$posterAlt.'" />'; //TS Images
 		} 
 	}
 	
@@ -180,9 +180,8 @@ class tx_html5video_pi1 extends tslib_pibase {
 		//start script		
 		$setupJS ='';
 		if( empty($this->conf['setupJS'])){
-			$setupJS ='<script type="text/javascript" charset="utf-8"> VideoJS.DOMReady(function(){ var '.$this->conf['options'].' = VideoJS.setup("All"'.$jsOptions.');
-});
-			 </script>';
+			$setupJS ='<script type="text/javascript" >  VideoJS.DOMReady(function(){ var '.$this->conf['options'].' = VideoJS.setup("All"'.$jsOptions.');
+}); </script>';
 		}else{
 			// wenn gesetzt auch keine jsOptions
 			$setupJS = $this->conf['setupJS'];

@@ -110,7 +110,12 @@ class tx_html5video_pi1 extends tslib_pibase {
 		$id['flash'] = empty($this->conf['flash.']['id'])?' ':' id="'.$this->conf['flash.']['class'].'"';
 		 //TODO: change or make a if for URL provided Extern file
 		$baseUrl=$GLOBALS['TSFE']->tmpl->setup['config.']['baseURL'];
-		$flashplayer=empty($this->conf['flash.']['player'])?'http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf':$this->conf['flash.']['player'];
+                
+		if (empty($this->conf['flash.']['player'])){
+                    $flashplayer = 'http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf';
+                }else{
+                    $flashplayer = $this->conf['flash.']['player'];
+                }
                 $this->conf['source.']['flv']= empty($this->conf['source.']['flv'])?$this->conf['source.']['mp4']:$this->conf['source.']['flv'];
 		$video= $this->conf['FlashMP4']?$this->conf['source.']['mp4']:$this->conf['source.']['flv'];
                 $video =$this->baseUrl.$video;

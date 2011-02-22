@@ -107,28 +107,23 @@ class tx_html5video_pi1 extends tslib_pibase {
 	 */
 	public function getFlash(){
 		$class['flash'] = empty($this->conf['flash.']['class'])?' ':' class="'.$this->conf['flash.']['class'].'"';
-		$id['flash'] = empty($this->conf['flash.']['id'])?' ':' id="'.$this->conf['flash.']['class'].'"';
+		$id['flash'] = empty($this->conf['flash.']['id'])?' ':' id="'.$this->conf['flash.']['id'].'"';
 		 //TODO: change or make a if for URL provided Extern file
 		$baseUrl=$GLOBALS['TSFE']->tmpl->setup['config.']['baseURL'];
-                
-		if (empty($this->conf['flash.']['player'])){
-                    $flashplayer = 'http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf';
-                }else{
-                    $flashplayer = $this->conf['flash.']['player'];
-                }
+                $flashplayer=empty($this->conf['flash.']['player'])?'http://releases.flowplayer.org/swf/flowplayer-3.2.6.swf':$this->conf['flash.']['player'];
                 $this->conf['source.']['flv']= empty($this->conf['source.']['flv'])?$this->conf['source.']['mp4']:$this->conf['source.']['flv'];
 		$video= $this->conf['FlashMP4']?$this->conf['source.']['mp4']:$this->conf['source.']['flv'];
                 $video =$this->baseUrl.$video;
-		$autoplay=$this->conf['AutoplayVideo']?',"autoPlay":true':'","autoPlay":false';
+		$autoplay=$this->conf['AutoplayVideo']?',"autoPlay":true':',"autoPlay":false';
 		$preload= $this->conf['PreloadVideo']?',"autoBuffering":true':',"autoBuffering":false';
 
                 $poster = '';
                 if(!empty($this->conf["source."]["poster"])){
                     $poster= $this->baseUrl.$this->conf["source."]["poster"];
                 }
-                $flashconfig='value=\'config={"clip":{"url":"'.$video.$autoplay.$preload.' }}\'';
+                $flashconfig='value=\'config={"clip":{"url":"'.$video.'"'.$autoplay.$preload.' }}\'';
 
-                $flash='<object '.$class['flash'].' width="'.$this->conf['width'].'" height="'.$this->conf['height'].'" type="application/x-shockwave-flash" data="'.$flashplayer.'">';
+                $flash='<object '.$id['flash'].''.$class['flash'].' width="'.$this->conf['width'].'" height="'.$this->conf['height'].'" type="application/x-shockwave-flash" data="'.$flashplayer.'">';
                 $flash.='<param name="movie" value="'.$flashplayer.'" />';
                 $flash.='<param name="allowfullscreen" value="true" />';
                 $flash.='<param name="flashvars" '.$flashconfig.' />';

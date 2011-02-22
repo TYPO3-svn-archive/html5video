@@ -54,7 +54,7 @@ plugin.tx_html5video_pi1{
 		class =	vjs-flash-fallback
 		id = flowplayer
 #kann auch leer gelassen werdern player =  dann wir der Player http://releases.flowplayer.org/swf/flowplayer-3.2.6.swf verwendet
-		player = typo3conf/ext/html5video/res/flowpayer/flowplayer-3.2.6.swf
+		player = typo3conf/ext/html5video/res/flowplayer/flowplayer-3.2.6.swf
 	}
 	videoJS =
 	videoCSS =

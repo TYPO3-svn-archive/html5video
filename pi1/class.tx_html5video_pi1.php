@@ -121,8 +121,10 @@ class tx_html5video_pi1 extends tslib_pibase {
                 if(!empty($this->conf["source."]["poster"])){
                     $poster= $this->baseUrl.$this->conf["source."]["poster"];
                 }
-                $flashconfig='value=\'config={"clip":{"url":"'.$video.'"'.$autoplay.$preload.' }}\'';
-
+      //          $flashconfig='value=\'config={"clip":{"url":"'.$video.'"'.$autoplay.$preload.' }}\'';
+                
+                $flashconfig='value=\'config={"playlist":[{"url":"/'.$poster.'", "scaling":"orig"},{"url":"/'.$video.'"'.$autoplay.$preload.' }]}\'';
+                
                 $flash='<object '.$id['flash'].''.$class['flash'].' width="'.$this->conf['width'].'" height="'.$this->conf['height'].'" type="application/x-shockwave-flash" data="'.$flashplayer.'">';
                 $flash.='<param name="movie" value="'.$flashplayer.'" />';
                 $flash.='<param name="allowfullscreen" value="true" />';
@@ -201,6 +203,7 @@ class tx_html5video_pi1 extends tslib_pibase {
      	     foreach($this->conf['options.'] as $option => $value){	
      	     	$jsOptions.= empty($value)?'':$option.':'.$value.',';
      	     }    
+             $jsOptions = substr($jsOptions,0,-1); 
      	     $jsOptions.= '}';
      	    return $jsOptions;
      	}

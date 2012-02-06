@@ -1,92 +1,62 @@
 plugin.tx_html5video_pi1{
-	source{ 	
-		poster = 
-		ogg =	
-		webm =	
-		mp4 =	
-		flv =	
-	}	
-	FlashMP4 = 1
+	//for default data
+	source{
+		poster =
+		ogg =
+		webm =
+		mp4 =
+		flv =
+	}
+
 	width = 640
 	height = 325
-	download = 1
+	download = 0
 	SupportVideoJS = 0
 	PreloadVideo =	0
 	AutoplayVideo =	0
+
 	patch =	uploads/html5video/
+	// in skin orginal durch tubecss oder ... ersetzen
 	skin =	orginal
-	skin{	
-		hu =	typo3conf/ext/html5video/res/videoJS/skins/hu.css
-		tube =	typo3conf/ext/html5video/res/videoJS/skins/tube.css
-		vim =	typo3conf/ext/html5video/res/videoJS/skins/vim.css
+	skin{
+	//	hu-css =	typo3conf/ext/html5video/res/videoJS/skins/hu.css
+		tubecss =	typo3conf/ext/html5video/res/videoJS/skins/tube.css
+	//	vim-css =	typo3conf/ext/html5video/res/videoJS/skins/vim.css
 	}
-	video{ 	
-		wrap =	<div class="video-js-box">|</div>
-		class =	video-js
-		id =
+	video{
+		wrap =|
+		class =	video-js vjs-default-skin
+		id = video-js
 	}
-	download{	
+
+	download{
 		wrap =	<p class="vjs-no-video"><strong>Download Video:</strong>|</p>
 		mp4 =	MP4
 		flv =	FLV
 		ogg =	Ogg
 		webm =	WebM
 	}
-	type{ 	
+	type{
 		flv =	video/x-flv
-		mp4 =	video/mp4; codecs="avc1.42E01E, mp4a.40.2"
-		ogg =	video/ogg; codecs="theora, vorbis"
-		webm =	video/webm; codecs="vp8, vorbis"
-
-
-
+		mp4 =	video/mp4
+		ogg =	video/ogg
+		webm =	video/webm
 	}
 	support = COA
-	support{ 
-		20 = TEXT        
-		20.value = by VideoJS		
+	support{
+		20 = TEXT
+		20.value = by VideoJS
 		10 = TEXT
 		10.typolink.parameter = videojs.com
 		10.value = HTML5 Video Player
 		wrap =	<p class="support">|</p>
 	}
-	flash{ 	
-		class =	vjs-flash-fallback
-		id = flowplayer
-#kann auch leer gelassen werdern player =  dann wir der Player http://releases.flowplayer.org/swf/flowplayer-3.2.6.swf verwendet
-		player = typo3conf/ext/html5video/res/flowplayer/flowplayer-3.2.6.swf
-	}
 	videoJS =
 	videoCSS =
 	setupJS =
-		
-	options = myVideoJSPlayers
+	useCDN = 1
+	// URL für CDN default ist die http://vjs.zencdn.net/c/ (video|video-js.css)
+	cdnURLjs =
+	cdnURLcss =
 
-	options{	
-		controlsBelow =	false
-		controlsHiding = true
-		defaultVolume =	0.85
-		flashVersion = 9
-		linksHiding = false
-		flashIsDominant = false
-		useBrowserControls = false
-	}
-
-/*
-      controlsBelow = false 
-      // Display control bar below video vs. in front of
-      controlsHiding = true
-       // Hide controls when not over the video
-      defaultVolume = 0.85
-       // Will be overridden by localStorage volume if available
-      flashVersion = 9
-       // Required flash version for fallback
-      linksHiding = false
-       // Hide download links when video is supported
-      flashIsDominant = false
-       // Always use Flash when available
-      useBrowserControls = true
-      // Dont' use the video JS controls (iPhone)
-      }
-*/ 
 }

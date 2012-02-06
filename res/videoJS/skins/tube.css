@@ -1,111 +1,397 @@
 /*
-VideoJS TubeCSS Skin (http://videojs.com)
-Version 2.0.0
+VideoJS Default Styles (http://videojs.com)
+Version 3.0.7
 */
 
-.tube-css .vjs-controls {
-  opacity: 1; color: #000;
-  height: 24px;
-  bottom: 0;
-  background-color: #ccc;
-  background: #fcfcfc -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#d0d0d0)) left top;
-  background: #fcfcfc -moz-linear-gradient(top,  #fcfcfc,  #d0d0d0) left top;
+.tubecss .vjs-controls {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: .85;
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 2.6em;
+	color: #fff;
+	border-top: 1px solid #404040;
+	background: -moz-linear-gradient(top, rgba(51, 51, 51, 0.8) 0, rgba(0, 0, 0, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(51, 51, 51, 0.8)), color-stop(100%, rgba(0, 0, 0, 1)));
+	background: -webkit-linear-gradient(top, rgba(51, 51, 51, 0.8) 0, rgba(0, 0, 0, 1) 100%);
+	background: -o-linear-gradient(top, rgba(51, 51, 51, 0.8) 0, rgba(0, 0, 0, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(51, 51, 51, 0.8) 0, rgba(0, 0, 0, 1) 100%);
+	background: linear-gradient(top, rgba(51, 51, 51, 0.8) 0, rgba(0, 0, 0, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cc333333', endColorstr = '#000000', GradientType = 0)
 }
 
-.tube-css .vjs-controls > div {
-  height: 23px; margin: 0; background: none; top: 0;
-  border: 1px solid #b1b1b1; border-left-color: #eee;
-  border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0;
-  box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;
+.tubecss .vjs-control {
+	position: relative;
+	float: left;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	height: 2.6em;
+	width: 2.6em
 }
 
-/* Placement of Control Items */
-.tube-css .vjs-controls > div.vjs-play-control       { width: 25px; left: 0; }
-.tube-css .vjs-controls > div.vjs-progress-control   { left: 102px; right: 83px; }
-.tube-css .vjs-controls > div.vjs-time-control       { width: 75px; left: 27px; }
-.tube-css .vjs-controls > div.vjs-volume-control     { width: 50px; right: 30px; }
-.tube-css .vjs-controls > div.vjs-fullscreen-control { width: 30px; right: 0; }
-
-/* Removing borders on time & progress to join them */
-.tube-css .vjs-controls > div.vjs-progress-control { border-left: none; }
-.tube-css .vjs-controls > div.vjs-time-control { border-right: none; }
-
-
-/* Play/Pause
--------------------------------------------------------------------------------- */
-.tube-css .vjs-play-control { margin-left: 0; border-left-color: #b1b1b1; }
-.tube-css.vjs-paused  .vjs-play-control span { border-left-color: #333; border-top-width: 7px; border-left-width: 13px; border-bottom-width: 7px; margin: 5px 0 0 7px; }
-.tube-css.vjs-playing .vjs-play-control span { height: 14px; margin: 5px auto 0; border-left: 4px solid #333; border-right: 4px solid #333; }
-.tube-css.vjs-paused  .vjs-play-control:hover span { border-left-color: #CF1A1A; }
-.tube-css.vjs-playing .vjs-play-control:hover span { border-left-color: #CF1A1A; border-right-color: #CF1A1A; }
-
-/* Time Display
--------------------------------------------------------------------------------- */
-.tube-css .vjs-controls .vjs-time-control { font-size: 11px; }
-.tube-css .vjs-controls .vjs-time-control span { line-height: 25px; /* Centering vertically */ }
-
-/* Progress
--------------------------------------------------------------------------------- */
-.tube-css .vjs-progress-holder {
-  margin-right: 10px;
-  background-color: #b1b1b1;
-  background: #b1b1b1 -webkit-gradient(linear, left top, left bottom, from(#b1b1b1), to(#cacaca)) left top;
-  background: #b1b1b1 -moz-linear-gradient(top,  #b1b1b1,  #cacaca) left top;
-  border-color: #CACACA; border-bottom-color: #eaeaea;
-  border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0;
-}
-.tube-css .vjs-progress-control .vjs-load-progress { background: #C89191; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; }
-.tube-css .vjs-progress-control .vjs-play-progress { background: #f33; background: -webkit-gradient(linear, left top, left bottom, from(#f33), to(#CF1A1A)); background: -moz-linear-gradient(top,  #f33,  #CF1A1A); -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
-
-/* Volume
--------------------------------------------------------------------------------- */
-.tube-css .vjs-volume-control div { padding: 3px 0 0 0; }
-.tube-css .vjs-volume-control div span { border-bottom-color: #ccc; }
-/* Volume icon color */
-.tube-css .vjs-volume-control div span.vjs-volume-level-on { border-color: #333; }
-/* Volume icon hovering color */
-.tube-css .vjs-volume-control:hover div span.vjs-volume-level-on { border-color: #CF1A1A; }
-
-/* Fullscreen
--------------------------------------------------------------------------------- */
-.tube-css .vjs-fullscreen-control div { margin: 4px 0 0 8px; }
-/* Fullscreen icon color */
-.tube-css .vjs-fullscreen-control div span:nth-child(3), .tube-css .vjs-fullscreen-control div span:nth-child(4), .tube-css.vjs-fullscreen .vjs-fullscreen-control div span:nth-child(1), .tube-css.vjs-fullscreen .vjs-fullscreen-control div span:nth-child(2) {
-  border-bottom-color: #333;
-}
-.tube-css .vjs-fullscreen-control div span:nth-child(1), .tube-css .vjs-fullscreen-control div span:nth-child(2), .tube-css.vjs-fullscreen .vjs-fullscreen-control div span:nth-child(3), .tube-css.vjs-fullscreen .vjs-fullscreen-control div span:nth-child(4) {
-  border-top-color: #333;
-}
-/* Fullscreen icon hovering color */
-.tube-css .vjs-fullscreen-control:hover div span:nth-child(3), .tube-css .vjs-fullscreen-control:hover div span:nth-child(4), .tube-css.vjs-fullscreen .vjs-fullscreen-control:hover div span:nth-child(1), .tube-css.vjs-fullscreen .vjs-fullscreen-control:hover div span:nth-child(2) {
-  border-bottom-color: #CF1A1A;
-}
-.tube-css .vjs-fullscreen-control:hover div span:nth-child(1), .tube-css .vjs-fullscreen-control:hover div span:nth-child(2), .tube-css.vjs-fullscreen .vjs-fullscreen-control:hover div span:nth-child(3), .tube-css.vjs-fullscreen .vjs-fullscreen-control:hover div span:nth-child(4) {
-  border-top-color: #CF1A1A;
+.tubecss .vjs-control:focus {
+	outline: 0
 }
 
-/* Big Play Button (at start)
----------------------------------------------------------*/
-.tube-css div.vjs-big-play-button { 
-  width: 84px; height: 58px; margin: -29px 0 0 -42px;
-  border: 2px solid #ccc; opacity: 0.9;
-  border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;
-
-  /* CSS Background Gradients */
-  /* Default */ background-color: #333;
-  /* Webkit  */ background: #000 -webkit-gradient(linear, left top, left bottom, from(#000), to(#333)) left 29px;
-  /* Firefox */ background: #000 -moz-linear-gradient(top,  #000,  #333) left 29px;
-
-  /* CSS Shadows */
-  box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;
+.tubecss .vjs-control-text {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px
 }
-.tube-css div.vjs-big-play-button:hover {
-  opacity: 1;
+
+.tubecss .vjs-play-control {
+	width: 5em;
+	cursor: pointer !important;
+	border-left: 1px solid #333;
+	border-right: 1px solid #222
 }
-.tube-css div.vjs-big-play-button span {
-  margin: 11px 0 0 26px;
-  /* Drawing the play triangle with borders - http://www.infimum.dk/HTML/slantinfo.html */
-  border-left: 36px solid #fff; /* Width & Color of play icon */
-  /* Height of play icon is total top & bottom border widths. Color is transparent. */
-  border-top: 18px solid rgba(0,0,0,0); border-bottom: 18px solid rgba(0,0,0,0);
+
+.tubecss.vjs-paused .vjs-play-control div {
+	width: 15px;
+	height: 17px;
+	background: url('tubesprite.png');
+	margin: .5em auto 0
+}
+
+.tubecss.vjs-paused .vjs-play-control div:hover {
+	background: url('tubesprite.png') 0 -75px
+}
+
+.tubecss.vjs-playing .vjs-play-control div {
+	width: 15px;
+	height: 17px;
+	background: url('tubesprite.png') -25px 0;
+	margin: .5em auto 0
+}
+
+.tubecss.vjs-playing .vjs-play-control div:hover {
+	background: url('tubesprite.png') -25px -75px
+}
+
+.tubecss .vjs-rewind-control {
+	width: 5em;
+	cursor: pointer !important
+}
+
+.tubecss .vjs-rewind-control div {
+	width: 19px;
+	height: 16px;
+	background: url('tubesprite.png');
+	margin: .5em auto 0
+}
+
+.tubecss .vjs-mute-control {
+	width: 3.8em;
+	cursor: pointer !important;
+	float: left;
+	border-left: 1px solid #333
+}
+
+.tubecss .vjs-mute-control div {
+	width: 22px;
+	height: 16px;
+	background: url('tubesprite.png') -75px -25px;
+	margin: .5em auto 0
+}
+
+.tubecss .vjs-mute-control.vjs-vol-0 div {
+	background: url('tubesprite.png') 0 -25px
+}
+
+.tubecss .vjs-mute-control.vjs-vol-1 div {
+	background: url('tubesprite.png') -25px -25px
+}
+
+.tubecss .vjs-mute-control.vjs-vol-2 div {
+	background: url('tubesprite.png') -50px -25px
+}
+
+.tubecss .vjs-mute-control div:hover {
+	background: url('tubesprite.png') -75px -100px
+}
+
+.tubecss .vjs-mute-control.vjs-vol-0 div:hover {
+	background: url('tubesprite.png') 0 -100px
+}
+
+.tubecss .vjs-mute-control.vjs-vol-1 div:hover {
+	background: url('tubesprite.png') -25px -100px
+}
+
+.tubecss .vjs-mute-control.vjs-vol-2 div:hover {
+	background: url('tubesprite.png') -50px -100px
+}
+
+.tubecss .vjs-volume-control {
+	position: absolute;
+	top: -0.1em;
+	left: 9em;
+	width: 6em;
+	padding-right: 8px;
+	border-right: 1px solid #222
+}
+
+.tubecss .vjs-volume-bar {
+	position: relative;
+	border-bottom: 1px solid #333;
+	width: 6em;
+	height: .6em;
+	margin: 1em auto 0;
+	cursor: pointer !important;
+	-moz-border-radius: .3em;
+	-webkit-border-radius: .3em;
+	border-radius: .3em;
+	background: #111
+}
+
+.tubecss .vjs-volume-level {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: .6em;
+	-moz-border-radius: .3em;
+	-webkit-border-radius: .3em;
+	border-radius: .3em;
+	background: #c61003;
+	background: -moz-linear-gradient(top, #c61003 0, #840400 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c61003), color-stop(100%, #840400));
+	background: -webkit-linear-gradient(top, #c61003 0, #840400 100%);
+	background: -o-linear-gradient(top, #c61003 0, #840400 100%);
+	background: -ms-linear-gradient(top, #c61003 0, #840400 100%);
+	background: linear-gradient(top, #c61003 0, #840400 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#c61003', endColorstr = '#840400', GradientType = 0)
+}
+
+.tubecss .vjs-volume-handle {
+	position: absolute;
+	top: -0.3em;
+	width: .5em;
+	height: 1.2em;
+	background: #696969;
+	left: 0;
+	border: 0;
+	border-top: 1px solid #888;
+	-moz-border-radius: .3em;
+	-webkit-border-radius: .3em;
+	border-radius: .3em
+}
+
+.tubecss div.vjs-progress-control {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 1em;
+	width: auto;
+	top: -1.3em;
+	border-bottom: 1px solid #1f1f1f;
+	border-top: 1px solid #222;
+	background: #111;
+	-moz-opacity: .80;
+	opacity: .80
+}
+
+.tubecss .vjs-progress-holder {
+	position: relative;
+	cursor: pointer !important;
+	padding: 0;
+	margin: 0;
+	height: 1.0em;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background: #000 -moz-opacity: .90;
+	opacity: .90
+}
+
+.tubecss .vjs-progress-holder .vjs-play-progress, .tubecss .vjs-progress-holder .vjs-load-progress {
+	position: absolute;
+	display: block;
+	height: 1.0em;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	top: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0
+}
+
+.tubecss .vjs-play-progress {
+	background: #ff0505;
+	background: -moz-linear-gradient(top, #ff0505 0, #9b0000 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff0505), color-stop(100%, #9b0000));
+	background: -webkit-linear-gradient(top, #ff0505 0, #9b0000 100%);
+	background: -o-linear-gradient(top, #ff0505 0, #9b0000 100%);
+	background: -ms-linear-gradient(top, #ff0505 0, #9b0000 100%);
+	background: linear-gradient(top, #ff0505 0, #9b0000 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ff0505', endColorstr = '#9b0000', GradientType = 0)
+}
+
+.tubecss .vjs-load-progress {
+	background: #999
+}
+
+.tubecss div.vjs-seek-handle {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	margin-top: -0.3em;
+	left: 0;
+	top: 0;
+	background: url('tubesprite.png') 0 -50px;
+	-moz-border-radius: .8em;
+	-webkit-border-radius: .8em;
+	border-radius: .8em;
+	-webkit-box-shadow: 0 2px 4px 0 #000;
+	-moz-box-shadow: 0 2px 4px 0 #000;
+	box-shadow: 0 2px 4px 0 #000
+}
+
+.tubecss div.vjs-seek-handle:hover {
+	background: url('tubesprite.png') -188px -50px
+}
+
+.tubecss .vjs-time-controls {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	width: 4em;
+	top: .0em;
+	border-bottom: 0;
+	border-top: 0;
+	background: transparent;
+	font-size: 1em;
+	line-height: 1.0em;
+	font-weight: normal;
+	font-family: Helvetica, Arial, sans-serif
+}
+
+.tubecss .vjs-current-time {
+	line-height: 2.4em;
+	left: 15.9em;
+	border-left: 1px solid #333
+}
+
+.tubecss .vjs-duration {
+	line-height: 2.4em;
+	left: 20.2em;
+	display: inline;
+	color: #999;
+	width: 39.5em;
+	text-align: left;
+	padding-left: 2px;
+	border-right: 1px solid #222
+}
+
+.tubecss .vjs-remaining-time {
+	right: 0;
+	display: none
+}
+
+.tubecss .vjs-time-divider {
+	line-height: 1.6em;
+	display: inline;
+	position: absolute;
+	left: 19.5em;
+	top: .5em;
+	color: #999
+}
+
+.tubecss .vjs-secondary-controls {
+	float: right
+}
+
+.tubecss .vjs-fullscreen-control {
+	width: 3.8em;
+	cursor: pointer !important;
+	float: right;
+	border-left: 1px solid #333;
+	border-right: 1px solid #222
+}
+
+.tubecss .vjs-fullscreen-control div {
+	width: 16px;
+	height: 16px;
+	background: url('tubesprite.png') -50px 0;
+	margin: .5em auto 0
+}
+
+.tubecss .vjs-fullscreen-control div:hover {
+	background: url('tubesprite.png') -50px -75px
+}
+
+.tubecss.vjs-fullscreen .vjs-fullscreen-control div {
+	background: url('tubesprite.png') -75px 0
+}
+
+.tubecss.vjs-fullscreen .vjs-fullscreen-control div:hover {
+	background: url('tubesprite.png') -75px -75px
+}
+
+.tubecss .vjs-big-play-button {
+	display: block;
+	z-index: 2;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 8.0em;
+	height: 8.0em;
+	margin: -43px 0 0 -43px;
+	text-align: center;
+	vertical-align: center;
+	cursor: pointer !important;
+	border: .3em solid #fff;
+	opacity: .95;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	background: #454545;
+	background: -moz-linear-gradient(top, #454545 0, #232323 50%, #161616 50%, #3f3f3f 100%);
+	background: -webkit-gradient(linear, 0% 0, 0% 100%, color-stop(0%, #454545), color-stop(50%, #232323), color-stop(50%, #161616), color-stop(100%, #3f3f3f));
+	background: -webkit-linear-gradient(top, #454545 0, #232323 50%, #161616 50%, #3f3f3f 100%);
+	background: -o-linear-gradient(top, #454545 0, #232323 50%, #161616 50%, #3f3f3f 100%);
+	background: -ms-linear-gradient(top, #454545 0, #232323 50%, #161616 50%, #3f3f3f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#454545', endColorstr = '#3f3f3f', GradientType = 0);
+	background: linear-gradient(top, #454545 0, #232323 50%, #161616 50%, #3f3f3f 100%);
+	-webkit-box-shadow: 4px 4px 8px #000;
+	-moz-box-shadow: 4px 4px 8px #000;
+	box-shadow: 4px 4px 8px #000
+}
+
+.tubecss div.vjs-big-play-button:hover {
+	-webkit-box-shadow: 0 0 80px #fff;
+	-moz-box-shadow: 0 0 80px #fff;
+	box-shadow: 0 0 80px #fff
+}
+
+.tubecss div.vjs-big-play-button span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 35px;
+	height: 42px;
+	margin: -20px 0 0 -15px;
+	background: url('tubesprite.png') -100px 0
+}
+
+.tubecss .vjs-default-skin div.vjs-loading-spinner-fallback {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 30px;
+	height: 30px;
+	margin: -15px 0 0 -15px;
+	background: url('loading.gif')
 }

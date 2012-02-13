@@ -7,7 +7,6 @@ plugin.tx_html5video_pi1{
 		mp4 =
 		flv =
 	}
-
 	width = 640
 	height = 325
 	download = 0
@@ -16,7 +15,7 @@ plugin.tx_html5video_pi1{
 	AutoplayVideo =	0
 
 	patch =	uploads/html5video/
-	// in skin orginal durch tubecss oder ... ersetzen
+	// in skin orginal durch tubecss oder ... ersetzen gleich Classen Name
 	skin =	orginal
 	skin{
 	//	hu-css =	typo3conf/ext/html5video/res/videoJS/skins/hu.css
@@ -26,9 +25,10 @@ plugin.tx_html5video_pi1{
 	video{
 		wrap =|
 		class =	video-js vjs-default-skin
+		// an die id wird die uid rangehängt -1
 		id = video-js
 	}
-
+	// stWrap für die Link Text um den Video Title mitzugeben ...
 	download{
 		wrap =	<p class="vjs-no-video"><strong>Download Video:</strong>|</p>
 		mp4 =	MP4
@@ -53,10 +53,10 @@ plugin.tx_html5video_pi1{
 	}
 	videoJS =
 	videoCSS =
-	setupJS =
-	useCDN = 1
-	// URL für CDN default ist die http://vjs.zencdn.net/c/ (video|video-js.css)
-	cdnURLjs =
-	cdnURLcss =
-
+// wenn cdn.css oder cdn.js leer sind dann wird trotz cdn.enable für das leere die source von der ext genommen
+	cdn{
+		enable =1
+		js = http://vjs.zencdn.net/c/video.js
+		css = http://vjs.zencdn.net/c/video-js.css
+	}
 }
